@@ -26,4 +26,5 @@ Now either place the directory anywhere under a web root, or use a commandbox em
 * List of CFML functions used sorted by usage count
 * Identifies Deprecated / Removed tag or function use (relies on the [cfdocs.org](https://cfdocs.org/) repository)
 * Minumum Version of ColdFusion for tags / functions
+* Identify tags / functions used that are not supported in either Adobe ColdFusion or Lucee
 * Other handy info
