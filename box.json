@@ -1,0 +1,29 @@
+{
+    "name":"cfmlstats",
+    "version":"1.0.0",
+    "author":"Pete Freitag / Foundeo Inc.",
+    "repository":{
+        "type":"",
+        "URL":""
+    },
+    "slug":"cfmlstats",
+    "shortDescription":"Parses your CFML code base and gives you stats",
+    "private":false,
+    "projectURL":"",
+    "dependencies":{
+        "cfmlparser":"git://github.com/foundeo/cfmlparser.git",
+        "cfdocs-site":"git://github.com/foundeo/cfdocs.git"
+    },
+    "devDependencies":{
+        
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ],
+    "installPaths":{
+        "cfmlparser":"cfmlparser",
+        "cfdocs-site":"cfdocs-site"
+    }
+}
