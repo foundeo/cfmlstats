@@ -6,6 +6,7 @@ Parses your CFML code base and gives you stats
 Clone this repository from github:
 
 	git clone https://github.com/foundeo/cfmlstats.git
+	cd cfmlstats
 
 Next you need to install the dependencies it requires [cfmlparser](https://github.com/foundeo/cfmlparser) and [cfdocs.org](https://github.com/foundeo/cfdocs). The easiest way to install them is to use [CommandBox](https://www.ortussolutions.com/products/commandbox) and run the following from the root:
 
