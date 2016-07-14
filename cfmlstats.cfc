@@ -12,6 +12,7 @@ component {
 		var tag = "";
 		var i = "";
 		var functions = [];
+		var pos = 0;
 		if (!structKeyExists(options, "fileFilter")) {
 			options.fileFilter = "*.cfm|*.cfc|*.cfml";
 		}
@@ -65,16 +66,19 @@ component {
 					}
 
 					for (i in functions) {
-						if (reFindNoCase("[\t\r\n =!(##]#i#\s*\(", parserFile.getFileContent())) {
-							if (i == "array") {
-								
-							}
-							if (!structKeyExists(stats.functions, i)) {
-								stats.functions[i] = 1;
-							} else {
-								stats.functions[i] = stats.functions[i]+1;
-							}
+						pos = 1;
+						while (pos != 0) {
+							pos = reFindNoCase("[\t\r\n =!(##]#i#\s*\(", parserFile.getFileContent(), pos);
+							if (pos != 0) {
+								if (!structKeyExists(stats.functions, i)) {
+									stats.functions[i] = 1;
+								} else {
+									stats.functions[i] = stats.functions[i]+1;
+								}
+								pos = pos + len(i)+2;
+							}	
 						}
+						
 					}
 
 
