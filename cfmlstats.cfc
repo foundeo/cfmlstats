@@ -1,5 +1,5 @@
 component {
-	variables.docBasePath = replace(getCurrentTemplatePath(), getFileFromPath(getCurrentTemplatePath()), "") & "cfdocs-site/data/en/";
+	variables.docBasePath = getDirectoryFromPath(getCurrentTemplatePath()) & "cfdocs-site/data/en/";
 
 
 	public struct function run(options) {
