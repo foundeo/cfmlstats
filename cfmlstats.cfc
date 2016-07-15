@@ -20,6 +20,8 @@ component {
 			options.ignorePaths = [];
 		}
 
+
+
 		try {
 			if (fileExists(variables.docBasePath & "index.json")) {
 				local.docIndex = deserializeJSON(fileRead(variables.docBasePath & "index.json"));
@@ -29,16 +31,27 @@ component {
 			//didnt load cfdocs
 		}
 
-		fileArray = directoryList(options.rootPath, true, "path", options.fileFilter);
+		var fileArray = directoryList(options.rootPath, true, "path", options.fileFilter);
+
+
+
 		for (filePath in fileArray) {
 			try {
 				if (fileExists(filePath)) {
+					var skip = false;
+
 					for (i in options.ignorePaths) {
 						if (filePath contains i) {
 							arrayAppend(stats.ignored, filePath);
-							continue;
+							skip = true;
+							break;
 						}
 					}
+
+					if(skip){
+						continue;
+					}
+
 					stats.files = stats.files + 1;
 
 					parserFile = new cfmlparser.File(filePath);
@@ -87,6 +100,7 @@ component {
 				arrayAppend(stats.errors, {message=e.message, detail=e.detail, filePath=filePath});
 			}
 		}
+
 		return stats;
 	}
 
