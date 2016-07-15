@@ -67,6 +67,10 @@
 	
 	<div class="jumbotron">
 	<h1>CFML Source Stats <small><cfoutput>#encodeForHTML(options.rootPath)#</cfoutput></small></h1>
+
+	<cfif NOT directoryExists(options.rootPath)>
+		<div class="alert alert-danger">The root path you specified does not exist on the file system.</div>
+	</cfif>
 	<div id="waiting" class="text-center">
 	<iframe src="https://giphy.com/embed/oKVs1VY0MKfvO?html5=true" width="480" height="253" frameBorder="0" class="giphy-embed"></iframe><p><a href="http://giphy.com/gifs/nervous-indiana-jones-waiting-oKVs1VY0MKfvO">waiting... via GIPHY</a></p>
 	</div>
