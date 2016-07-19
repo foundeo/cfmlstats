@@ -60,7 +60,7 @@ component {
 					if (parserFile.isScript()) {
 						stats.features.scriptCFC = stats.features.scriptCFC+1;
 					} else if (ext == "cfc") {
-						stats.features.tagCFC = stats.features.scriptCFC+1;
+						stats.features.tagCFC = stats.features.tagCFC+1;
 					}
 					if (getFileFromPath(filePath) == "Application.cfc") {
 						stats.features.applicationCFC = stats.features.applicationCFC+1;
